@@ -7,3 +7,5 @@ edition = "2024"
 git2 = "0.20.2"
 serde = { version = "1.0.228", features = ["derive"] }
 ulid = "1.2.1"
+thiserror = "2.0.17"
+serde_json = "1.0.145"

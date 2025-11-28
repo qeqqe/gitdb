@@ -420,7 +420,7 @@ mod tests {
     fn test_row_key_valid() {
         assert!(RowKey::new("abc123").is_ok());
         assert!(RowKey::new("01ARZ3NDEKTSV4RRFFQ69G5FAV").is_ok()); // ULID
-        assert!(RowKey::new("550e8400-e29b-41d4-a716-446655440000"). is_err()); // UUID has colons?  No, dashes only - actually UUID is valid
+        assert!(RowKey::new("550e8400-e29b-41d4-a716-446655440000"). is_err());
         assert!(RowKey::new("simple_key").is_ok());
     }
 
