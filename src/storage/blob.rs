@@ -10,7 +10,7 @@ use serde::{Deserialize, Serialize};
 use serde_json::Value;
 
 use crate::storage::errors::{StorageError, StorageResult};
-use crate::storage::types::{BlobId, RowKey};
+pub(crate) use crate::storage::types::{BlobId, RowKey};
 
 /// a db row with metadata and user data
 ///
