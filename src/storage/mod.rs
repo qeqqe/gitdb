@@ -1,2 +1,3 @@
 pub mod types;
-mod errors;
+pub mod errors;
+mod blob;
