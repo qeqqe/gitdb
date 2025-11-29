@@ -13,7 +13,7 @@ use std::path::Path;
 use git2::{FileMode, ObjectType, Repository, Tree, TreeBuilder as Git2TreeBuilder};
 
 use crate::storage::blob::BlobId;
-use crate::storage::errors::{StorageError, StorageResult};
+use crate::storage::error::{StorageError, StorageResult};
 use crate::storage::types::{RowKey, RowPath, TableName, TreeId};
 
 /// A read only handle to a git tree at a specific commit
@@ -287,7 +287,7 @@ impl<'repo> TreeMutator<'repo> {
         }
 
         let table_builder = self.get_table_builder(table_str)?;
-        let filename = format!("{}. json", key);
+        let filename = format!("{}.json", key);
 
         table_builder.insert(&filename, blob_id.raw(), FileMode::Blob.into())?;
 

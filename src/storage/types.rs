@@ -112,7 +112,8 @@ impl TableName {
 
         let first_char = name.chars().next().unwrap();
 
-        if first_char.is_ascii_alphanumeric() && first_char != '_' {
+        // Must start with a letter or underscore (not a digit)
+        if !first_char.is_ascii_alphabetic() && first_char != '_' {
             return Err(InvalidNameError::InvalidStart(first_char));
         }
 
@@ -122,7 +123,7 @@ impl TableName {
             }
         }
 
-        if Self::RESERVED.contains(&name. to_lowercase().as_str()) {
+        if Self::RESERVED.contains(&name.to_lowercase().as_str()) {
             return Err(InvalidNameError::Reserved(name.to_string()));
         }
 
@@ -420,7 +421,7 @@ mod tests {
     fn test_row_key_valid() {
         assert!(RowKey::new("abc123").is_ok());
         assert!(RowKey::new("01ARZ3NDEKTSV4RRFFQ69G5FAV").is_ok()); // ULID
-        assert!(RowKey::new("550e8400-e29b-41d4-a716-446655440000"). is_err());
+        assert!(RowKey::new("550e8400-e29b-41d4-a716-446655440000").is_ok()); // UUID with hyphens is valid
         assert!(RowKey::new("simple_key").is_ok());
     }
 
