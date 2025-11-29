@@ -16,7 +16,7 @@ use crate::storage::blob::{self, Row};
 use crate::storage::commit::{self, CommitBuilder, CommitInfo, CommitMessage};
 use crate::storage::error::{StorageError, StorageResult};
 use crate::storage::refs::RefManager;
-use crate::storage::tree::{self, TreeHandle, TreeMutator};
+use crate::storage::tree::TreeMutator;
 use crate::storage::types::{BranchName, CommitId, GitSignature, RowKey, TableName, TreeId};
 
 /// The main Git repository wrapper.

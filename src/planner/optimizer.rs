@@ -5,7 +5,7 @@
 use std::sync::Arc;
 
 use super::error::PlanResult;
-use super::logical::{LogicalPlan, ProjectColumn, SortDirection, SortSpec};
+use super::logical::{LogicalPlan, ProjectColumn};
 use super::physical::{
     PhysicalAggregate, AggregatePhysical, JoinPhysicalType, PhysicalOperator,
     PhysicalPlan, PhysicalPlanNode,

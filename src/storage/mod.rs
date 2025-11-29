@@ -72,10 +72,4 @@ pub use types::{
 };
 
 // Re-export for internal use by other modules
-pub(crate) use blob::{deserialize_row, read_blob, serialize_row, write_blob};
-pub(crate) use commit::{
-    create_initial_commit, detect_conflicts, diff_commits, find_merge_base,
-    get_commit, get_tree_at_commit, history, CommitBuilder,
-};
 pub(crate) use refs::RefManager;
-pub(crate) use tree::{create_initial_tree, TreeHandle, TreeMutator};

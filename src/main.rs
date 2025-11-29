@@ -5,7 +5,7 @@
 use std::path::PathBuf;
 use std::process::ExitCode;
 
-use GitDB::db::{Database, DatabaseConfig, Repl, ReplConfig};
+use GitDB::db::{Database, DatabaseConfig, Repl};
 
 fn main() -> ExitCode {
     let args: Vec<String> = std::env::args().collect();

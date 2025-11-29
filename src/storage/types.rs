@@ -1,7 +1,7 @@
 //! core type-safe wrappers around git primitives for the storage layer.
 
 use std::fmt;
-use std::fmt::{write, Formatter};
+use std::fmt::Formatter;
 use std::path::PathBuf;
 use git2::Oid;
 use serde::{Deserialize, Serialize};

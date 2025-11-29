@@ -3,7 +3,10 @@
 use serde_json::Value;
 
 use super::error::{ExecuteError, ExecuteResult};
-use crate::sql::{BinaryOperator, Expr, LiteralValue, UnaryOperator};
+use crate::sql::{BinaryOperator, Expr, UnaryOperator};
+
+#[cfg(test)]
+use crate::sql::LiteralValue;
 
 /// Evaluate an expression against a row.
 pub fn evaluate(expr: &Expr, row: &serde_json::Map<String, Value>) -> ExecuteResult<Value> {

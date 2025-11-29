@@ -165,7 +165,7 @@ pub fn get_commit(repo: &Repository, id: CommitId) -> StorageResult<CommitInfo> 
 }
 
 /// get the tree snapshot at a specific commit
-pub fn get_tree_at_commit(repo: &Repository, commit_id: CommitId) -> StorageResult<TreeHandle> {
+pub fn get_tree_at_commit(repo: &Repository, commit_id: CommitId) -> StorageResult<TreeHandle<'_>> {
     let commit = repo
         .find_commit(commit_id.raw())
         .map_err(|_| StorageError::CommitNotFound(commit_id.to_string()))?;

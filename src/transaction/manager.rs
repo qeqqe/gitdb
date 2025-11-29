@@ -13,7 +13,7 @@ use std::sync::Arc;
 use parking_lot::{Mutex, RwLock};
 use ulid::Ulid;
 
-use crate::storage::{BranchName, CommitId, GitRepository};
+use crate::storage::{CommitId, GitRepository};
 use crate::transaction::context::{Transaction, TransactionMetadata, TxActive};
 use crate::transaction::error::{TransactionError, TransactionResult};
 use crate::transaction::isolation::IsolationLevel;
