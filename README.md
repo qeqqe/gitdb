@@ -13,8 +13,7 @@ GitDB is a fully-functional SQL database that stores all its data in a Git repos
 
 **Why would anyone build this?** Great question. I don't have a good answer either.
 
-**Should you use this in production?** Absolutely! why not ( ͡° ͜ʖ ͡°).> Note: While playing around with it i accidentally messed up and messed up the whole repo, this the new repo with all the commits squashed that i made in previous one.
-
+**Should you use this in production?** Absolutely! why not ( ͡° ͜ʖ ͡°).
 
 ---
 
