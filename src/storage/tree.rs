@@ -128,7 +128,7 @@ impl<'repo> TreeHandle<'repo> {
         };
 
         let filename = format!("{}.json", key);
-        match table_tree.tree.get_name(&filename) {
+        let result = match table_tree.tree.get_name(&filename) {
             Some(entry) => {
                 if entry.kind() != Some(ObjectType::Blob) {
                     return Err(StorageError::UnexpectedEntryType {
@@ -140,7 +140,8 @@ impl<'repo> TreeHandle<'repo> {
                 Ok(Some(BlobId::new(entry.id())))
             }
             None => Ok(None),
-        }
+        };
+        result
     }
 
     /// check if a row exists

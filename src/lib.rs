@@ -7,7 +7,7 @@
 //! # Example
 //!
 //! ```no_run
-//! use GitDB::db::Database;
+//! use gitdb::db::Database;
 //!
 //! let mut db = Database::open("./my_database").unwrap();
 //! db.execute("CREATE TABLE users (id TEXT PRIMARY KEY, name TEXT)").unwrap();

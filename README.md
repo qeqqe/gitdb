@@ -1,13 +1,12 @@
 # GitDB
 
-> **A Git backed document database That Absolutely Nobody fucking Asked For**
+> **A Git backed document database That Absolutely Nobody Asked For**
 
-[![Rust](https://img.shields.io/badge/rust-stable-orange.svg)](https://www.rust-lang.org/)
 [![Tests](https://img.shields.io/badge/tests-134%20passing-brightgreen.svg)]()
 
 ---
 
-## What The Fuck Is This?
+## What Is This?
 
 GitDB is a fully-functional SQL database that stores all its data in a Git repository. Every INSERT is a commit. Every table is a directory. Your entire database history is preserved forever in `.git/`.
 
@@ -31,22 +30,59 @@ GitDB is a fully-functional SQL database that stores all its data in a Git repos
 
 ## Installation
 
+### As a CLI Tool (install globally)
+
 ```bash
 # clone this
 git clone https://github.com/qeqqe/gitdb.git
 cd gitdb
 
-# Build
-cargo build --release
+# install globally
+cargo install --path .
 
-# Run it
-./target/release/GitDB
+# check if it works
+gitdb --version
 ```
 
-or just run directly with cargo like a civilized developer...:
+### As a Library in Your Project
+
+Add this to your `Cargo.toml` (will be added to crates.io soon):
+
+```toml
+[dependencies]
+gitdb = { git = "https://github.com/qeqqe/gitdb.git" }
+```
+
+Or if you want to use a local path:
+
+```toml
+[dependencies]
+gitdb = { path = "../path/to/gitdb" }
+```
+
+Then in your Rust code:
+
+```rust
+use gitdb::db::Database;
+
+fn main() -> Result<(), Box<dyn std::error::Error>> {
+    let mut db = Database::open("./my_database")?;
+    db.execute("CREATE TABLE users (id TEXT PRIMARY KEY, name TEXT)")?;
+    db.execute("INSERT INTO users (id, name) VALUES ('1', 'Alice')")?;
+    
+    let result = db.execute("SELECT * FROM users")?;
+    println!("{:?}", result);
+    Ok(())
+}
+```
+
+### Build from Source (without installing)
 
 ```bash
-cargo run -- --help
+git clone https://github.com/qeqqe/gitdb.git
+cd gitdb
+cargo build --release
+./target/release/gitdb --help
 ```
 
 ---
@@ -448,12 +484,6 @@ It's very fast (only like 50x-60x (maybe more) times slower then pgsql):
 4. Commit your changes (`git commit -am 'Add some cursed feature'`)
 5. Push to the branch (`git push origin feature/even-more-cursed`)
 6. Create a Pull Request
-
----
-
-## License?
-
-Do whatever the hell you want with it idrc.
 
 ---
 

@@ -1,7 +1,20 @@
 [package]
-name = "GitDB"
+name = "gitdb"
 version = "0.1.0"
-edition = "2024"
+edition = "2021"
+description = "A Git-backed SQL document database"
+license = "MIT"
+repository = "https://github.com/qeqqe/gitdb"
+keywords = ["database", "git", "sql", "document-store"]
+categories = ["database", "command-line-utilities"]
+
+[[bin]]
+name = "gitdb"
+path = "src/main.rs"
+
+[lib]
+name = "gitdb"
+path = "src/lib.rs"
 
 [dependencies]
 git2 = "0.20.2"

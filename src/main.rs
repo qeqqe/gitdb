@@ -5,7 +5,7 @@
 use std::path::PathBuf;
 use std::process::ExitCode;
 
-use GitDB::db::{Database, DatabaseConfig, Repl};
+use gitdb::db::{Database, DatabaseConfig, Repl};
 
 fn main() -> ExitCode {
     let args: Vec<String> = std::env::args().collect();
@@ -117,8 +117,8 @@ fn run_repl(db: Database) -> Result<(), Box<dyn std::error::Error>> {
     Ok(())
 }
 
-fn print_result(result: &GitDB::executor::QueryResult) {
-    use GitDB::executor::QueryResult;
+fn print_result(result: &gitdb::executor::QueryResult) {
+    use gitdb::executor::QueryResult;
     
     match result {
         QueryResult::Success { message } => {

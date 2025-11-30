@@ -3,21 +3,6 @@
 version = 4
 
 [[package]]
-name = "GitDB"
-version = "0.1.0"
-dependencies = [
- "chrono",
- "git2",
- "parking_lot",
- "serde",
- "serde_json",
- "sqlparser",
- "tempfile",
- "thiserror",
- "ulid",
-]
-
-[[package]]
 name = "android_system_properties"
 version = "0.1.5"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -158,6 +143,21 @@ dependencies = [
  "openssl-probe",
  "openssl-sys",
  "url",
+]
+
+[[package]]
+name = "gitdb"
+version = "0.1.0"
+dependencies = [
+ "chrono",
+ "git2",
+ "parking_lot",
+ "serde",
+ "serde_json",
+ "sqlparser",
+ "tempfile",
+ "thiserror",
+ "ulid",
 ]
 
 [[package]]
