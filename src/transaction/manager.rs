@@ -248,7 +248,7 @@ mod tests {
     use serde_json::Value;
     use tempfile::TempDir;
 
-    use crate::storage::{Row, RowKey, TableName};
+    use crate::storage::{RowKey, TableName};
 
     fn setup() -> (TempDir, TransactionManager) {
         let dir = TempDir::new().unwrap();

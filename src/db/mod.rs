@@ -7,6 +7,6 @@ mod api;
 mod repl;
 mod connection;
 
-pub use api::{Database, DatabaseConfig, DatabaseResult};
+pub use api::{Database, DatabaseConfig, DatabaseError, DatabaseResult};
 pub use connection::{Connection, ConnectionPool};
 pub use repl::{Repl, ReplConfig};
