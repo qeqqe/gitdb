@@ -14,7 +14,7 @@ GitDB is a fully-functional SQL database that stores all its data in a Git repos
 
 **Should you use this in production?** Absolutely! why not ( ͡° ͜ʖ ͡°).
 
----
+> Demo - https://github.com/qeqqe/chat-app-with-gitdb
 
 ## Features
 
